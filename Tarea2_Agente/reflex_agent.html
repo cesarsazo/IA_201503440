@@ -2,7 +2,13 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Agente inteligente</title>
+	<script>
+		window.setInterval(function() {
+		  var elem = document.getElementById('scrolldiv');
+		  elem.scrollTop = elem.scrollHeight;
+		}, 5000);
+    </script>
 </head>
 <body>	
 	<div style="margin-top: 2%; margin-bottom: 20%; margin-right: 20%; margin-left: 20%; text-align: center;">
@@ -11,12 +17,18 @@
 
 		<div class="states">
             <div class="container">
-              <img src="img/1.png" alt="state1" id="state1">
-              <img src="img/2.png" alt="state2" id="state2">
+              <img src="img/0.png" alt="state1" id="stateImg">
             </div>
         </div>
 
-		<p id="log"></p>
+		<div id="scrolldiv" class="scrolldiv" style="margin-left: 21%; height: 200px; width: 455px; border-style: solid; overflow-y: scroll;">
+			<p id="log"></p>
+		</div>
+
+		<div id="contadores" style="margin-left: 11%; height: 25px; width: 655px; border-style: solid;">
+			<p id="contadores"></p>
+		</div>
+
 		<script type="text/javascript" src="reflex_agent.js"></script>		
 	</div>
 </body>
