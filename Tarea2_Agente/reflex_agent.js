@@ -10,7 +10,6 @@ function reflex_agent(location, state) {
 }
 
 function test(states){
-	finalizar();
   	var location = states[0];		
   	var state = states[0] == "A" ? states[1] : states[2];
   	var action_result = reflex_agent(location, state);
@@ -29,7 +28,13 @@ function test(states){
   	}
   	else if (action_result == "LEFT"){
     	states[0] = "A";    	
-  	} 	
+  	}
+
+  	if (state_1 >= 2 && state_2 >= 2 && state_3 >= 2 && state_4 >= 2 && state_5 >= 2 && state_6 >= 2 && state_7 >= 2 && state_8 >= 2) {
+		alert("Finalizo la ejecución");
+        return;
+    }
+
 	setTimeout(function(){
 		grafico(location, action_result, states);
 		test(states);
@@ -69,7 +74,6 @@ function grafico(location, action_result, states) {
 	}
 }
 
-
 function setImage(n) {
 	const img = document.getElementById("stateImg");
 	if (n === 1)
@@ -108,13 +112,6 @@ function ensuciar(states) {
   		states[1] = "CLEAN";
   		states[2] = "CLEAN";
   	}
-}
-
-function finalizar() {
-	if (state_1 >= 2 && state_2 >= 2 && state_3 >= 2 && state_4 >= 2 && state_5 >= 2 && state_6 >= 2 && state_7 >= 2 && state_8 >= 2) {
-		alert("Finalizo la ejecución");
-        return;
-    }
 }
 
 var states = ["A","DIRTY","DIRTY"];
